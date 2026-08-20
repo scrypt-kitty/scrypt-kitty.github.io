@@ -1,0 +1,13 @@
+# security.txt — https://securitytxt.org/  (RFC 9116)
+# scrypt-kitty welcomes coordinated vulnerability disclosure.
+# Reach out via the contact form on the site.
+
+# TODO: set this to your real site URL before publishing.
+Contact: https://scrypt-kitty.example/#contact
+
+Preferred-Languages: en
+Canonical: https://scrypt-kitty.example/.well-known/security.txt
+
+# Set to a real date ~1 year out (RFC 9116 requires Expires).
+# TODO: update this date.
+Expires: 2026-12-31T23:59:59Z

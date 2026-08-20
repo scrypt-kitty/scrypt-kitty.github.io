@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="scrypt-kitty">
+  <rect width="64" height="64" rx="12" fill="#0a0e12"/>
+  <!-- cat ears -->
+  <path d="M14 20 L22 10 L26 24 Z" fill="#5eead4"/>
+  <path d="M50 20 L42 10 L38 24 Z" fill="#5eead4"/>
+  <!-- face -->
+  <circle cx="32" cy="36" r="18" fill="none" stroke="#5eead4" stroke-width="3"/>
+  <!-- eyes -->
+  <circle cx="25" cy="34" r="2.6" fill="#f471b5"/>
+  <circle cx="39" cy="34" r="2.6" fill="#f471b5"/>
+  <!-- nose + mouth -->
+  <path d="M32 39 l-2.4 2.6 h4.8 Z" fill="#f471b5"/>
+  <path d="M32 42 v3 M32 45 q-4 0 -6 -2 M32 45 q4 0 6 -2" fill="none" stroke="#93a1b0" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- whiskers -->
+  <g stroke="#5eead4" stroke-width="1.4" stroke-linecap="round" opacity=".8">
+    <path d="M18 37 h7 M18 41 h7 M46 37 h-7 M46 41 h-7"/>
+  </g>
+</svg>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>scrypt-kitty — security research &amp; digital rights</title>
+  <meta name="description" content="scrypt-kitty — senior DevSecOps &amp; product-security engineer and digital-rights activist. Anti-surveillance, anti-datacenter, pro-transparency. Consultation, CV help, training, and mentorship." />
+
+  <!-- No trackers, no analytics, no third-party JavaScript. This page ships zero script tags. -->
+  <meta name="referrer" content="no-referrer" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0a0e12" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="scrypt-kitty — security research &amp; digital rights" />
+  <meta property="og:description" content="Independent security researcher and digital-rights activist. Anti-surveillance, anti-datacenter, pro-transparency." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== NAV (CSS-only mobile toggle, no JS) ===================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="scrypt-kitty home">
+        <span class="brand-mark" aria-hidden="true">&gt;^..^&lt;</span>
+        <span class="brand-name">scrypt-kitty</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Research</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#activism">Activism</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <!-- Dynamic blog (Wagtail → static bake), served at the notes subdomain. TODO: set real domain. -->
+        <li><a href="https://notes.scrypt-kitty.example" rel="noopener">Dispatches</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">product security · devsecops · supply-chain defense · digital rights</p>
+          <h1 class="hero-title">
+            I secure the software you rely on<br />
+            <span class="accent">and fight the systems that surveil you.</span>
+          </h1>
+          <p class="lede">
+            Senior DevSecOps and product-security engineer with over a decade hardening
+            software, running vulnerability-management programs, and defending software supply
+            chains. Off the clock: a digital-rights activist working to expose and roll back
+            mass surveillance and extractive datacenter buildouts.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#services">Work with me</a>
+            <a class="btn btn-ghost" href="#activism">The cause</a>
+          </div>
+          <p class="hero-meta">
+            <span class="dot ok" aria-hidden="true"></span>
+            Available for consulting, training &amp; mentorship
+          </p>
+        </div>
+
+        <!-- Terminal card (pure CSS/HTML, decorative) -->
+        <aside class="terminal" aria-label="Terminal snapshot">
+          <div class="terminal-bar">
+            <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+            <span class="terminal-title">whoami.sh</span>
+          </div>
+          <pre class="terminal-body"><code><span class="c-prompt">kitty@lab</span>:<span class="c-path">~</span>$ whoami
+<span class="c-out">scrypt-kitty</span>
+<span class="c-prompt">kitty@lab</span>:<span class="c-path">~</span>$ cat roles.txt
+<span class="c-out">- senior devsecops / product security
+- vulnerability management programs
+- supply-chain &amp; software security
+- incident response &amp; threat hunting
+- digital-rights activist</span>
+<span class="c-prompt">kitty@lab</span>:<span class="c-path">~</span>$ cat ethos.txt
+<span class="c-out">transparency &gt; secrecy
+people &gt; platforms
+consent &gt; capture</span>
+<span class="c-prompt">kitty@lab</span>:<span class="c-path">~</span>$ <span class="cursor">█</span></code></pre>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== CRED STRIP ===================== -->
+    <section class="stripe" aria-label="At a glance">
+      <div class="wrap stat-row">
+        <div class="stat"><span class="stat-num">10+&nbsp;yr</span><span class="stat-label">security engineering &amp; DevSecOps</span></div>
+        <div class="stat"><span class="stat-num">SOC&nbsp;2</span><span class="stat-label">&amp; HITRUST compliance programs</span></div>
+        <div class="stat"><span class="stat-num">supply&nbsp;chain</span><span class="stat-label">npm attack threat hunting</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-label">trackers on this site</span></div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="kicker">// about</p>
+        <h2 class="section-title">Hi, I'm scrypt-kitty.</h2>
+        <div class="about-grid">
+          <div class="prose">
+            <p>
+              I've spent over a decade in <strong>security engineering and DevSecOps</strong> —
+              leading product vulnerability-management programs, application security, and
+              software supply-chain defense at scale. My day-to-day is the unglamorous, essential
+              work: triaging and remediating vulnerabilities, hardening CI/CD pipelines, reviewing
+              code and infrastructure, threat modeling, and responding to incidents.
+            </p>
+            <p>
+              I care about doing it honestly. Good security work means reproducible findings,
+              ruling out false positives, and clear remediation the engineers who own the code
+              can actually act on. I've built the programs, the tooling, and the training to make
+              that happen — and hunted threats through live supply-chain attacks when it counted.
+            </p>
+            <p>
+              I'm also a <strong>digital-rights activist</strong>. The same instincts that secure
+              systems make it plain how surveillance systems really work — and who they're pointed
+              at. I believe technology should extend human freedom, not quietly ration it. That
+              conviction shows up in who I help and what I fight.
+            </p>
+          </div>
+          <ul class="fact-list" aria-label="Focus areas">
+            <li><span class="fl-key">Focus</span> product &amp; application security, vulnerability management, supply-chain security</li>
+            <li><span class="fl-key">Cloud</span> AWS, Kubernetes, Terraform, HashiCorp Vault, CI/CD</li>
+            <li><span class="fl-key">Tooling</span> Snyk, Semgrep, Trivy, OSV, SAST/DAST/SCA, Burp Suite</li>
+            <li><span class="fl-key">Langs</span> Python, Go, Ruby, Node.js, Bash</li>
+            <li><span class="fl-key">Compliance</span> SOC 2, HITRUST · Security+, Network+, Linux+, LPIC-1</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SELECTED WORK ===================== -->
+    <section class="section section-alt" id="work">
+      <div class="wrap">
+        <p class="kicker">// experience</p>
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-lede">
+          A decade-plus across product security, application security, and infrastructure.
+          Employers generalized by domain — details on request.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">◆</div>
+            <h3>Supply-chain security &amp; threat hunting</h3>
+            <p>Senior DevSecOps at a real-time database vendor. Owned supply-chain security tooling
+            and vendor rollout, and hunted threats live through the Shai-Hulud, qix, and
+            S1NGULARITY npm attacks. Built org-wide repo enumeration and automated removal of
+            vulnerable dependencies.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">▲</div>
+            <h3>Product vulnerability management</h3>
+            <p>Led the product vulnerability-management program at an enterprise identity platform —
+            triage, remediation strategy, executive metrics, and cross-team coordination across
+            engineering, IT, compliance, and customer success.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">●</div>
+            <h3>Application security programs</h3>
+            <p>Principal AppSec engineer at a healthcare-data platform: ran bug-bounty and
+            penetration-testing programs, built threat models, drove HITRUST compliance, and
+            reviewed code and cloud infrastructure for security.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">■</div>
+            <h3>Infrastructure security &amp; IR</h3>
+            <p>Head of infrastructure &amp; security at a health startup: stood up the security
+            program, led a SOC 2 audit, ran incident response (including a cl0p zero-day), and
+            migrated infrastructure to Terraform-managed AWS.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">◇</div>
+            <h3>Security research &amp; development</h3>
+            <p>Security R&amp;D engineering: DLP and MFA software, GeoIP anomaly detection, CI/CD
+            pipelines to Kubernetes and OpenStack, and secrets management with HashiCorp Vault.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">◈</div>
+            <h3>Secure SDLC &amp; enablement</h3>
+            <p>Shifting security left: dependency-vulnerability reporting in CI/CD, SAST/DAST/SCA
+            evaluation, secure-code-review practices, and hands-on training for engineering teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <p class="kicker">// services</p>
+        <h2 class="section-title">How I can help</h2>
+        <p class="section-lede">
+          Paid engagements fund the free and low-cost work below. If you're low-income, an
+          immigrant, LGBTQIA+, or a nonprofit — reach out anyway. We'll figure it out.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">◈</div>
+            <h3>Security assessment &amp; code review</h3>
+            <p>Application and cloud security review, threat modeling, vulnerability triage and
+            remediation planning, and secure-SDLC guidance — findings written clearly enough for
+            engineers to act on.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">✎</div>
+            <h3>CV &amp; résumé review</h3>
+            <p>Honest, tactical review of your security résumé, portfolio, and project write-ups —
+            from someone who's hired and been hired in this field.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">⚑</div>
+            <h3>Training &amp; mentorship</h3>
+            <p>Breaking into security — especially for adults changing careers. Structured guidance,
+            lab paths, and honest expectations. Sliding scale and free tiers for those who need it.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">◎</div>
+            <h3>Consultation</h3>
+            <p>AppSec / DevSecOps program review, threat modeling, vulnerability-management
+            strategy, supply-chain security, and secure-SDLC enablement for engineering teams.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">⌘</div>
+            <h3>Community &amp; 2600</h3>
+            <p>Meetups, talks, and workshops. I help run and support local hacker spaces and
+            2600 meetings — come learn, no gatekeeping.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">✶</div>
+            <h3>Nonprofit &amp; activist tech</h3>
+            <p>Threat modeling, OPSEC, and infrastructure hardening for organizers, journalists,
+            and nonprofits working under pressure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACTIVISM ===================== -->
+    <section class="section section-cause" id="activism">
+      <div class="wrap">
+        <p class="kicker kicker-invert">// activism &amp; transparency</p>
+        <h2 class="section-title">Surveillance is a choice. So is resistance.</h2>
+        <p class="section-lede section-lede-invert">
+          Automated license-plate readers, always-on cameras, and hyperscale datacenters are
+          being installed faster than communities can consent to them. I document how these
+          systems work, help people opt out, and support the fights to stop them.
+        </p>
+
+        <div class="cause-grid">
+          <article class="cause">
+            <h3>Anti-surveillance / DeFlock</h3>
+            <p>Mapping and resisting Flock and other ALPR/mass-camera networks. Know what's watching
+            your street, and what your rights are.</p>
+            <a class="link-arrow" href="#contact">Get involved →</a>
+          </article>
+          <article class="cause">
+            <h3>Anti-datacenter / Project Raspberry</h3>
+            <p>Hyperscale datacenters drain water and power from communities that never agreed to host
+            them. Transparency on permits, resource use, and who really benefits.</p>
+            <a class="link-arrow" href="#contact">Learn more →</a>
+          </article>
+          <article class="cause">
+            <h3>Digital rights (EFF-aligned)</h3>
+            <p>Privacy, encryption, and the right to tinker. I stand with the broader movement for
+            civil liberties in a networked world.</p>
+            <a class="link-arrow" href="https://www.eff.org" rel="noopener noreferrer">eff.org →</a>
+          </article>
+        </div>
+
+        <blockquote class="manifesto">
+          &ldquo;The tools of the watchers are not magic. They can be understood, documented, and
+          challenged. That's the work.&rdquo;
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===================== NOTES / RESOURCES ===================== -->
+    <section class="section" id="notes">
+      <div class="wrap">
+        <p class="kicker">// notes &amp; resources</p>
+        <h2 class="section-title">Field notes &amp; links</h2>
+
+        <!-- Live blog: Project Raspberry, DeFlock / Flock Off, surveillance & datacenter awareness. -->
+        <p class="section-lede">
+          Longer writing and activism updates live on <a href="https://notes.scrypt-kitty.example" rel="noopener">dispatches</a>
+          — Project Raspberry, DeFlock / Flock&nbsp;Off, and the fight against mass surveillance.
+        </p>
+
+        <div class="notes-grid">
+          <details class="note">
+            <summary>DEF CON notes</summary>
+            <p>Talk summaries, tooling I picked up, and things worth revisiting from the con.
+            <em>(Coming soon — add write-ups here.)</em></p>
+          </details>
+          <details class="note">
+            <summary>BSides notes</summary>
+            <p>Regional BSides highlights and local scene recaps. <em>(Coming soon.)</em></p>
+          </details>
+          <details class="note">
+            <summary>Resources / linktree</summary>
+            <p>Music, socials, talks, and reading. Everything in one place —
+            <a href="#contact">links below</a> and a curated list here soon.</p>
+          </details>
+          <details class="note">
+            <summary>Getting into security</summary>
+            <p>A no-BS starter path: labs (HackTheBox, TryHackMe, PortSwigger Academy), what to learn
+            first, and how to build a portfolio without spending a fortune. <em>(Guide in progress.)</em></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <!--
+      ADD A CONTACT CHANNEL:
+      Copy one <li class="contact-item"> block below, change the icon, label, value, and href.
+      That's it — no build step, no JavaScript. Keep hrefs correct:
+        email:   href="mailto:you@example.com"
+        signal:  href="https://signal.me/#eu/<link>"   (or show username)
+        discord: href="https://discord.com/users/<id>"  (or show username)
+        matrix:  href="https://matrix.to/#/@user:server"
+    -->
+    <section class="section section-alt" id="contact">
+      <div class="wrap">
+        <p class="kicker">// contact</p>
+        <h2 class="section-title">Reach out</h2>
+        <p class="section-lede">
+          The best way to reach me is the form, or my public profiles below. I aim to reply
+          within a few days.
+        </p>
+
+        <div class="contact-layout">
+          <ul class="contact-list" aria-label="Contact channels">
+            <!-- GITHUB (public handle) -->
+            <li class="contact-item">
+              <span class="ci-ico" aria-hidden="true">⌥</span>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <a class="ci-value" href="https://github.com/scrypt-kitty" rel="noopener noreferrer">github.com/scrypt-kitty</a>
+              </div>
+            </li>
+
+            <!-- TWITTER / X (public handle) -->
+            <li class="contact-item">
+              <span class="ci-ico" aria-hidden="true">𝕏</span>
+              <div>
+                <span class="ci-label">Twitter / X</span>
+                <a class="ci-value" href="https://x.com/scrypt-kitty" rel="noopener noreferrer">@scrypt-kitty</a>
+              </div>
+            </li>
+
+            <!--
+              WANT TO ADD A DIRECT CHANNEL LATER? (email, Signal, Discord, Matrix, PGP…)
+              Copy this template, uncomment it, and fill in the value + href.
+              No personal contact info is published by default.
+
+              <li class="contact-item">
+                <span class="ci-ico" aria-hidden="true">✉</span>
+                <div>
+                  <span class="ci-label">Email</span>
+                  <a class="ci-value" href="mailto:you@example.com">you@example.com</a>
+                </div>
+              </li>
+            -->
+          </ul>
+
+          <!--
+            CONTACT FORM (no JavaScript).
+            This posts directly to a form-handling endpoint. To keep the site static + secure,
+            use a self-hosted handler or a privacy-respecting service. Set the action URL below.
+            Options: your own server, Formspree, Cloudflare, etc. Until then it points nowhere.
+          -->
+          <form class="contact-form" method="post" action="#" aria-label="Contact form">
+            <p class="form-note">Prefer a form? This posts to an endpoint you control — no JS, no trackers.</p>
+            <label>Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>How can I help?
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <!-- Simple honeypot (hidden from humans, catches naive bots) -->
+            <label class="hp" aria-hidden="true">Leave this empty
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </label>
+            <button type="submit" class="btn btn-primary">Send</button>
+            <p class="form-hint">Set <code>action</code> in <code>index.html</code> to your form endpoint.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <span class="brand-mark" aria-hidden="true">&gt;^..^&lt;</span>
+        <span class="footer-brand">scrypt-kitty</span>
+        <p class="footer-tag">Security research &amp; digital rights.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#work">Research</a>
+        <a href="#services">Services</a>
+        <a href="#activism">Activism</a>
+        <a href="#contact">Contact</a>
+        <a href="/.well-known/security.txt">security.txt</a>
+      </nav>
+      <div class="footer-pledge">
+        <p><strong>No-tracking pledge:</strong> this site runs no analytics, no cookies, and no
+        third-party JavaScript. View source — that's all there is.</p>
+        <p class="footer-license">Content licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer">CC BY-SA 4.0</a>. Built as flat HTML/CSS.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

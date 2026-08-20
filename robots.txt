@@ -1,0 +1,20 @@
+# scrypt-kitty
+# Human-friendly, crawler-neutral. No hidden dirs to protect here — it's all static.
+User-agent: *
+Allow: /
+
+# Block known AI training scrapers (opt out of the dataset grind).
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+
+# Sitemap: https://scrypt-kitty.example/sitemap.xml
