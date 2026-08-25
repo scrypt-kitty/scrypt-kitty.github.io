@@ -239,6 +239,9 @@ a:hover { text-decoration: underline; }
   display: block; margin-top: 0.9rem; text-align: right;
   font-size: 0.85rem; font-style: normal; color: var(--muted); letter-spacing: 0.04em;
 }
+/* in-development project name (no link yet) */
+.res-wip { font-weight: 600; color: var(--text); opacity: 0.72; }
+.res-wip::after { content: " · in dev"; font-weight: 400; font-size: 0.8em; color: var(--muted); opacity: 0.9; }
 
 /* ---------- notes ---------- */
 .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
