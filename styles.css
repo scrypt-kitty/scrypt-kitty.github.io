@@ -239,6 +239,7 @@ a:hover { text-decoration: underline; }
 /* in-development project name (no link yet) */
 .res-wip { font-weight: 600; color: var(--text); opacity: 0.72; }
 .res-wip::after { content: " · in dev"; font-weight: 400; font-size: 0.8em; color: var(--muted); opacity: 0.9; }
+.res-soon { font-style: normal; font-size: 0.85em; color: var(--accent-3); }
 .btn-mini { font: inherit; font-size: .82rem; padding: .18rem .55rem; border: 1px solid var(--border); border-radius: .4rem; background: var(--surface); color: var(--text); cursor: pointer; }
 .btn-mini:hover { border-color: var(--accent); }
 .nav-icon { display: inline-flex; align-items: center; color: var(--muted); }
