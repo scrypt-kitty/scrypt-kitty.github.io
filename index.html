@@ -42,12 +42,10 @@
         <li><a href="#activism">Activism</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#resources">Resources</a></li>
-        <li><a href="#notes">Notes</a></li>
         <!-- Blog (Wagtail → static bake) hosted free on GitHub Pages. -->
-        <li><a href="https://scrypt-kitty.github.io/dispatches/" rel="noopener">Dispatches</a></li>
-        <!-- UNDERWIRE — independent tech & activism zine (its own site). -->
-        <li><a href="https://scrypt-kitty.github.io/underwire/" rel="noopener">Underwire</a></li>
+        <li><a href="https://scrypt-kitty.github.io/dispatches/" rel="noopener">Dispatches Blog</a></li>
         <li><a href="https://github.com/scrypt-kitty" rel="noopener noreferrer" class="nav-icon" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .2a8 8 0 00-2.53 15.6c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8 8 0 008 .2z"/></svg></a></li>
+        <li><button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light / dark theme" title="Toggle theme">◐</button></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -366,7 +364,8 @@ consent &gt; capture</span>
             <h3 class="res-cat">In development</h3>
             <ul class="res-list">
               <li><span class="res-wip">unicron-ce / unicron-ee</span><span>Open-core AI-SOC security platform — Community (open source) + Enterprise.</span></li>
-              <li><span class="res-wip">Meatspace</span><span>An alternate-reality game: a near-future world that's for sale, and you're browsing it.</span></li>
+              <li><a href="https://scrypt-kitty.github.io/meatspace-pages/portal/" rel="noopener noreferrer">Meatspace ↗</a><span>An alternate-reality game — a near-future world that's for sale, and you're browsing it. Live &amp; in progress; enter via JANUS.</span></li>
+              <li><a href="https://scrypt-kitty.github.io/underwire/" rel="noopener">UNDERWIRE ↗</a><span>Independent hacker / 2600 tech &amp; activism zine + meetup. Launching soon.</span></li>
             </ul>
           </div>
           <div class="res-group">
@@ -542,7 +541,19 @@ consent &gt; capture</span>
     </div>
   </footer>
   <script>
-  /* First-party, dependency-free email reveal — the address is not stored contiguously in source. */
+  /* First-party, dependency-free: theme toggle + email reveal. No deps, no trackers. */
+  (function(){
+    var root=document.documentElement, saved=null;
+    try { saved=localStorage.getItem('theme'); } catch(e){}
+    if(saved){ root.setAttribute('data-theme', saved); }
+    var t=document.getElementById('theme-toggle');
+    if(t){ t.addEventListener('click', function(){
+      var cur=root.getAttribute('data-theme');
+      var next=cur ? (cur==='light'?'dark':'light') : (matchMedia('(prefers-color-scheme: light)').matches?'dark':'light');
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e){}
+    }); }
+  })();
   (function(){
     var a=2+Math.floor(Math.random()*7), b=2+Math.floor(Math.random()*7);
     var eq=document.getElementById('eq'); if(!eq)return; eq.textContent=a+' + '+b;
