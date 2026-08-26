@@ -31,21 +31,18 @@
   --pad: clamp(1rem, 4vw, 2rem);
 }
 
+/* Light palette — applied by OS preference (unless a manual choice is set) or the toggle. */
 @media (prefers-color-scheme: light) {
-  :root {
-    --bg:        #f6f8fa;
-    --bg-alt:    #eef2f6;
-    --surface:   #ffffff;
-    --surface-2: #f2f5f8;
-    --border:    #d6dee6;
-    --text:      #131a21;
-    --muted:     #4b5763;
-    --muted-2:   #6b7a8a;
-    --accent:      #0f9c8a;
-    --accent-2:    #c02a7a;
-    --accent-3:    #b45309;
-    --accent-ink:  #ffffff;
+  :root:not([data-theme]) {
+    --bg: #f6f8fa; --bg-alt: #eef2f6; --surface: #ffffff; --surface-2: #f2f5f8;
+    --border: #d6dee6; --text: #131a21; --muted: #4b5763; --muted-2: #6b7a8a;
+    --accent: #0f9c8a; --accent-2: #c02a7a; --accent-3: #b45309; --accent-ink: #ffffff;
   }
+}
+:root[data-theme="light"] {
+  --bg: #f6f8fa; --bg-alt: #eef2f6; --surface: #ffffff; --surface-2: #f2f5f8;
+  --border: #d6dee6; --text: #131a21; --muted: #4b5763; --muted-2: #6b7a8a;
+  --accent: #0f9c8a; --accent-2: #c02a7a; --accent-3: #b45309; --accent-ink: #ffffff;
 }
 
 /* ---------- reset-ish ---------- */
@@ -248,6 +245,8 @@ a:hover { text-decoration: underline; }
 .nav-icon:hover { color: var(--text); }
 #email-out { word-break: break-all; }
 #email-challenge input { width: 3ch; margin: 0 .2rem; }
+.theme-toggle { font: inherit; font-size: 1.15rem; line-height: 1; background: none; border: 0; color: var(--muted); cursor: pointer; padding: .2rem .35rem; }
+.theme-toggle:hover { color: var(--text); }
 
 /* ---------- notes ---------- */
 .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
